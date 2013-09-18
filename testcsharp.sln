@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tstInvokeDLL", "tstInvokeDLL\tstInvokeDLL.csproj", "{EE2A6E35-F39E-4000-A42B-B460398CCA5F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71} = {A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cppDLL", "cppDLL\cppDLL.vcxproj", "{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Debug|Win32.ActiveCfg = Debug|x64
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Debug|x64.ActiveCfg = Debug|x64
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Debug|x64.Build.0 = Debug|x64
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Debug|x86.ActiveCfg = Debug|x86
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Debug|x86.Build.0 = Debug|x86
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Release|Mixed Platforms.Build.0 = Release|x64
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Release|Win32.ActiveCfg = Release|x64
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Release|x64.ActiveCfg = Release|x86
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Release|x64.Build.0 = Release|x86
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Release|x86.ActiveCfg = Release|x86
+		{EE2A6E35-F39E-4000-A42B-B460398CCA5F}.Release|x86.Build.0 = Release|x86
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Debug|Win32.Build.0 = Debug|Win32
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Debug|x64.ActiveCfg = Debug|Win32
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Debug|x86.ActiveCfg = Debug|Win32
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Release|Win32.ActiveCfg = Release|Win32
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Release|Win32.Build.0 = Release|Win32
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Release|x64.ActiveCfg = Release|Win32
+		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}.Release|x86.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

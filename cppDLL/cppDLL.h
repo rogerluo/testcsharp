@@ -4,6 +4,8 @@
 #if defined _MSC_VER
 #	if defined CPPDLL_EXPORTS
 #		define CPPDLL_API __declspec( dllexport )
+#	else
+#		define CPPDLL_API 
 #	endif
 #endif
 
@@ -12,7 +14,10 @@ extern "C" {
 #endif
 
 // all output function
-	int CPPDLL_API Add(int lhs, int rhs);
+	CPPDLL_API int Add(int lhs, int rhs);
+	CPPDLL_API void SetA(const char * psz);
+	CPPDLL_API void SetW(const wchar_t * pwsz); 
+	// error, csdel calling convention, not support overload
 
 #if defined __cplusplus
 }

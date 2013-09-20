@@ -9,7 +9,8 @@ namespace tstInvokeDLL
     {
         static void Main(string[] args)
         {
-            InvokeDLL.InvokeCPPDLL();
+            InvokeDLL shell = new InvokeDLL();
+            shell.TestDllImportAttributeUsage();
         }
     }
 }

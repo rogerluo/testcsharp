@@ -10,6 +10,10 @@ printf/cout could display chinese character directly using the default locale
 2.	使用“cout<<endl”或“wcout<<endl”时，不仅会使输出文本换行，而且还会
 	执行flush成员函数，提交缓冲区中的数据。使得cout、wcout的输出文本不会
 	发生冲突。
+3.	printf/cout能输出中文是由于缺省的locale下能支持中文（因为中文是asci编码的）
+	wprintf/wcout在缺省下中文是UCS2 little endian 编码的，所以需要修改
+	相应的locale才能输出，对于wprintf需要使用函数setlocale，对于wcout
+	需要使用wcout.imbue。
 
 vs中中文的编码在char与wchar_t之间的编码分别如下
 	// ASCI: c4 e3 ba c3 20 ca c0 bd e7
@@ -22,6 +26,8 @@ vs中中文的编码在char与wchar_t之间的编码分别如下
 %s意味着对应的参数会被当作普通字符串(multi-byte string)看待。
 不要以为%s只用于printf，而%ls只用于wprintf 。实际上，(printf, wprintf) 和
 (%s,%ls)这两个元组之间是相互独立的。
+
+
 
 Source Insight
 ALT+F12使source insight字体等宽

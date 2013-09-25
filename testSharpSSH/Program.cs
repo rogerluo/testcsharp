@@ -19,7 +19,7 @@ namespace testSharpSSH
             //sh.testConnectWithPPK();
             sh.Connect();
             sh.GetCurFileList();
-            sh.Unzip(Resources.SpecifiedFilePath);
+            //sh.Unzip(Resources.SpecifiedFilePath);
             sh.DisConnect();
             
             Console.WriteLine("Done");

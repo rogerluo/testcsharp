@@ -114,20 +114,10 @@ namespace testSharpSSH
 
         public void GetCurFileList()
         {
-            InitVAHInfo();
+            if (!_ssn.isConnected()) return;
             try
             {
-                JSch jsch = new JSch();
-                Session ssn = jsch.getSession(_usr, _hip, _hp);
-                System.Collections.Hashtable hashConfig = new Hashtable();
-                hashConfig.Add("StrictHostKeyChecking", "No");
-                ssn.setConfig(hashConfig);
-                jsch.addIdentity(_ppk);
-                ssn.connect();
-                if (ssn.isConnected())
-                {
-                    Console.WriteLine("Log Successfully.");
-                    Channel chnnl = ssn.openChannel("sftp");
+                    Channel chnnl = _ssn.openChannel("sftp");
                     chnnl.connect();
                     if (chnnl.isConnected())
                     {
@@ -135,8 +125,8 @@ namespace testSharpSSH
                         if (!string.IsNullOrEmpty(Resources.InitListDirectory))
                         {
                             _initdir = (string)Resources.InitListDirectory.Replace(":", "").Replace("\\", "/");
-                            if (!_initdir.Contains("cygdrive"))
-                                _initdir = "/cygdrive/" + _initdir;
+                            //if (!_initdir.Contains("cygdrive"))
+                            //    _initdir = "/cygdrive" + _initdir;
                             ChannelSftp sftp = (ChannelSftp)chnnl;
                             try
                             {
@@ -144,11 +134,11 @@ namespace testSharpSSH
                                 ArrayList lst = sftp.ls(_initdir);
                                 foreach (ChannelSftp.LsEntry fstat in lst)
                                 {
-                                    Console.WriteLine("{0} {1:D5} {2:D5} {3} {4}", 
-                                        fstat.getAttrs().getPermissionsString(), 
+                                    Console.WriteLine("{0} {1:D5} {2:D5} {3} {4}",
+                                        fstat.getAttrs().getPermissionsString(),
                                         fstat.getAttrs().getUId(),
                                         fstat.getAttrs().getGId(),
-                                        Util.Time_T2DateTime((uint)fstat.getAttrs().getMTime()).ToString("yyyy-MM-dd HH:mm:ss"),
+                                        Tamir.SharpSsh.jsch.Util.Time_T2DateTime((uint)fstat.getAttrs().getMTime()).ToString("yyyy-MM-dd HH:mm:ss"),
                                         fstat.getFilename());
                                 }
                             }
@@ -161,12 +151,8 @@ namespace testSharpSSH
                                 Console.WriteLine(anyex.Message);
                             }
                         }
-                        chnnl.disconnect();    
+                        chnnl.disconnect();
                     }
-                    ssn.disconnect();
-                }
-                else
-                    Console.WriteLine("Log failed.");
             }
             catch (Tamir.SharpSsh.jsch.JSchException jschex)
             {
@@ -238,8 +224,8 @@ namespace testSharpSSH
 
         private void InitVAHInfo(bool bInPPK = false)
         {
-            _hip = "10.35.21.200";
-            _hp = 22;
+            _hip = Resources.HostIP;
+            _hp = Int32.Parse(Resources.HostPort);
             _usr = "reutadmin";
             _bInPPK = bInPPK;
             _pwd = "Tin.netSA";

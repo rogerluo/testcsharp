@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.20827.3
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tstInvokeDLL", "tstInvokeDLL\tstInvokeDLL.csproj", "{EE2A6E35-F39E-4000-A42B-B460398CCA5F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A3BBC04E-1F12-41D5-A6E6-C0057AADCD71} = {A3BBC04E-1F12-41D5-A6E6-C0057AADCD71}
@@ -23,6 +21,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpSSH", "SharpSSH\SharpSSH.csproj", "{D27CF69D-4681-492A-BE4D-D3D209104423}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpSSHExamples", "SharpSSHExamples\SharpSSHExamples.csproj", "{327E25D4-D8DF-4704-ABA3-274F8E777847}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testBashCmd", "testBashCmd\testBashCmd.csproj", "{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +127,22 @@ Global
 		{327E25D4-D8DF-4704-ABA3-274F8E777847}.Release|Win32.ActiveCfg = Release|Any CPU
 		{327E25D4-D8DF-4704-ABA3-274F8E777847}.Release|x64.ActiveCfg = Release|Any CPU
 		{327E25D4-D8DF-4704-ABA3-274F8E777847}.Release|x86.ActiveCfg = Release|Any CPU
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Debug|Win32.ActiveCfg = Debug|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Debug|Win32.Build.0 = Debug|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Debug|x64.ActiveCfg = Debug|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Debug|x86.ActiveCfg = Debug|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Debug|x86.Build.0 = Debug|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Release|Any CPU.ActiveCfg = Release|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Release|Win32.ActiveCfg = Release|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Release|Win32.Build.0 = Release|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Release|x64.ActiveCfg = Release|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Release|x86.ActiveCfg = Release|x86
+		{CEA2B9B4-4F03-4DED-B262-D2BD2E70584F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

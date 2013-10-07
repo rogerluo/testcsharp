@@ -50,6 +50,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="testCMD.cs" />
     <Compile Include="testPuttyTools.cs" />
   </ItemGroup>
   <ItemGroup>

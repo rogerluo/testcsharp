@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
+using System.Threading;
 using testBashCmd.Properties;
 
 namespace testBashCmd
@@ -166,17 +167,33 @@ namespace testBashCmd
 
         private bool WindowsServiceOperation(string srvname, bool bToStart)
         {
-            string args = bToStart ? GenerateCmdArguments(EPSCPToolType.PLINK, string.Format("net start {0}", srvname)) :
-                                    GenerateCmdArguments(EPSCPToolType.PLINK, string.Format("net stop {0}", srvname));
+            //string args = bToStart ? GenerateCmdArguments(EPSCPToolType.PLINK, string.Format("net start {0}", srvname)) :
+            //                        GenerateCmdArguments(EPSCPToolType.PLINK, string.Format("net stop {0}", srvname));
+            string args = GenerateCmdArguments(EPSCPToolType.PLINK, "ls");
             if (string.IsNullOrEmpty(args))
             {
                 _errmsg = Resources.ErrorGenerateCommand;
                 return false;
             }
-            Console.WriteLine(args);
+
             _bash.StartInfo.FileName = BIN_PATH_PLINK;
             _bash.StartInfo.Arguments = args;
+            _bash.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            _bash.StartInfo.UseShellExecute = false;
+            _bash.StartInfo.RedirectStandardOutput = true;
+
+            Console.WriteLine(args);
             _bash.Start();
+
+            StreamReader sr = _bash.StandardOutput;
+            string line = sr.ReadLine();
+            _bash.StartInfo.RedirectStandardOutput = false;
+
+
+            while (!string.IsNullOrEmpty(line))
+            {
+                line = sr.ReadLine();
+            }
             _bash.WaitForExit();
             return true;
         }
@@ -188,12 +205,13 @@ namespace testBashCmd
             switch (type)
             { 
                 case EPSCPToolType.PLINK:
-                    tmp.Append(string.Format(" -C -ssh {0}", _cmdPrefix));
+                    tmp.Append(string.Format(" -C {0}", _cmdPrefix));
                     foreach (string arg in args)
                     {
                         tmp.Append(' ');
                         tmp.Append(arg);
                     }
+                   
                     break;
                 case EPSCPToolType.PSFTP:
                     break;

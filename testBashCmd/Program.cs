@@ -32,11 +32,11 @@ namespace testBashCmd
                         return;
                     }
 
-                    if (!putty.NetStopService(srcname))
-                    {
-                        Console.WriteLine("Failed at NetStopService({0}): {1}.", srcname, putty.LastError());
-                        return;
-                    }
+                    //if (!putty.NetStopService(srcname))
+                    //{
+                    //    Console.WriteLine("Failed at NetStopService({0}): {1}.", srcname, putty.LastError());
+                    //    return;
+                    //}
 
                     sw1.Stop();
                     Console.WriteLine("using {0} miniseconds.", sw1.ElapsedMilliseconds);
@@ -68,7 +68,7 @@ namespace testBashCmd
                     Stopwatch sw1 = new Stopwatch();
                     sw1.Start();
 
-                    string srcname = Resources.ServiceName;
+                    string srcname = "smf";//Resources.ServiceName;
 
                     if (!putty.NetStartService(srcname))
                     {
@@ -76,11 +76,11 @@ namespace testBashCmd
                         return;
                     }
 
-                    if (!putty.NetStopService(srcname))
-                    {
-                        Console.WriteLine("Failed at NetStopService({0}): {1}.", srcname, putty.LastError());
-                        return;
-                    }
+                    //if (!putty.NetStopService(srcname))
+                    //{
+                    //    Console.WriteLine("Failed at NetStopService({0}): {1}.", srcname, putty.LastError());
+                    //    return;
+                    //}
 
                     sw1.Stop();
                     Console.WriteLine("using {0} miniseconds.", sw1.ElapsedMilliseconds);
@@ -96,8 +96,9 @@ namespace testBashCmd
 
         static void Main(string[] args)
         {
-            TestPuttyToolsWithPWD();
-            TestPuttyToolsWithPPK();
+            //TestPuttyToolsWithPWD();
+            //TestPuttyToolsWithPPK();
+            testCMD.InvodeSimpleCMD();
         }
     }
 }

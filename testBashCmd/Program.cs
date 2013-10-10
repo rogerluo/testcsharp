@@ -98,7 +98,9 @@ namespace testBashCmd
         {
             //TestPuttyToolsWithPWD();
             //TestPuttyToolsWithPPK();
-            testCMD.InvodeSimpleCMD();
+            //testCMD.InvodeSimpleCMD();
+            testCMD.GetRemoteScriptResult();
+            testCMD.GetRemoteScriptResult();
         }
     }
 }

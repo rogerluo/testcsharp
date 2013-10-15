@@ -31,9 +31,9 @@ namespace testBashCmd
             _bash.WaitForExit();
 
             _out = _bash.StandardOutput;
-            //_err = _bash.StandardError;
+            _err = _bash.StandardError;
             string _outmsg = _out.ReadToEnd();
-            //string _errmsg = _err.ReadToEnd();
+            string _errmsg = _err.ReadToEnd();
             
             _bash.StartInfo.RedirectStandardOutput = false;
             _bash.StartInfo.RedirectStandardError = false;

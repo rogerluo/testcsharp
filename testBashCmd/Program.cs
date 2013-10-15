@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using testBashCmd.Properties;
+using testSharpDLL;
 
 namespace testBashCmd
 {
@@ -99,8 +100,9 @@ namespace testBashCmd
             //TestPuttyToolsWithPWD();
             //TestPuttyToolsWithPPK();
             //testCMD.InvodeSimpleCMD();
-            testCMD.GetRemoteScriptResult();
-            testCMD.GetRemoteScriptResult();
+            //testCMD.GetRemoteScriptResult();
+            //testCMD.GetRemoteScriptResult();
+            PuttyLibrary.Run();
         }
     }
 }

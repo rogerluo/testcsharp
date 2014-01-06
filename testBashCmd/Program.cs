@@ -5,6 +5,7 @@ using System.Text;
 using System.Diagnostics;
 using testBashCmd.Properties;
 using testSharpDLL;
+using NetworkUtility;
 
 namespace testBashCmd
 {
@@ -14,13 +15,14 @@ namespace testBashCmd
         {
             try
             {
-                using (testPuttyTools putty = new testPuttyTools(){
-                        Host = Resources.RmtHost,
-                        HostPort = Resources.RmtHostPort,
-                        Username = Resources.RmtUsername,
-                        Password = Resources.RmtPassword,
-                        ExternalDir = Resources.ExternalDirectory,
-                    })
+                using (testPuttyTools putty = new testPuttyTools()
+                {
+                    Host = Resources.RmtHost,
+                    HostPort = Resources.RmtHostPort,
+                    Username = Resources.RmtUsername,
+                    Password = Resources.RmtPassword,
+                    ExternalDir = Resources.ExternalDirectory,
+                })
                 {
                     Stopwatch sw1 = new Stopwatch();
                     sw1.Start();
@@ -61,7 +63,7 @@ namespace testBashCmd
                     HostPort = Resources.RmtHostPort,
                     Username = Resources.RmtUsername,
                     UsePWD = false,
-                    PPK = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, 
+                    PPK = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                             Resources.PrivateKey),
                     ExternalDir = Resources.ExternalDirectory,
                 })
@@ -102,8 +104,17 @@ namespace testBashCmd
             //testCMD.InvodeSimpleCMD();
             //testCMD.GetRemoteScriptResult();
             //testCMD.GetRemoteScriptResult();
-            PuttyLibrary.Run();
-                        
+            //PuttyLibrary.Run();
+            foreach (Website site in NetworkUtility.NetworkUtility.GetSites("//IIS://BJZQ-DDSMEVAA09/W3SVC"))
+            {
+                Console.WriteLine(String.Concat
+        (
+            site.Name, " , ",
+            site.Identity, " , ",
+            site.Status, " , ",
+            site.PhysicalPath
+        ));
+            }
         }
     }
 }
